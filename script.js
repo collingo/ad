@@ -14,21 +14,18 @@ $(function() {
     current = current < 0 ? current + 3 : current;
     $li.forEach(function(item, index) {
       var state;
-      switch(true) {
-        case current === index:
-          $(item).addClass('current');
-          // state = 'current';
+      switch(index) {
+        case current:
+          state = 'current';
           break;
-        case (current+1)%3 === index:
-          $(item).addClass('right');
-          // state = 'right';
+        case (current+1)%3:
+          state = 'right';
           break;
         default:
-          $(item).addClass('left');
-          // state = 'left';
+          state = 'left';
           break;
       }
-      // $(item).addClass(state);
+      $(item).addClass(state);
     });
   });
 
